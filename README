@@ -1,0 +1,24 @@
+# 🚀 Como rodar a documentação localmente
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/Erick-ems/GCES-DEBIAN/tree/gh-pages
+   cd seu-repositorio
+
+# Crie e ative um ambiente virtual:
+python3 -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+# ou
+.venv\Scripts\activate  # Windows
+
+# Instale as dependências necessárias:
+
+pip install mkdocs mkdocs-material
+
+# Rode o servidor local para visualizar a documentação:
+mkdocs serve
+
+
+Esse bloco vai direto ao ponto e cobre todos os passos para rodar a documentação localmente. Se precisar de algo mais, estou à disposição!
+
