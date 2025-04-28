@@ -25,7 +25,7 @@ Os seguintes estudantes que participam do desenvolvimento deste projeto:
 - **Maria Clara Oleari - 221008338**
 - **Matheus Henrick Dutra dos Santos - 190018101**
 - **Natália Rodrigues de Morais - 221037975**
-- **Pedro de Miranda Haick**
+- **Pedro de Miranda Haick - 180129147**
 - **Raphaela Guimarães - 190116072**
 
 ---
