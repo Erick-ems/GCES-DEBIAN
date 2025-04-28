@@ -87,9 +87,3 @@ Em vez de manter arquivos `.md` diretamente no repositório para a documentaçã
 - [ ] Planejamento de onboarding de novos contribuidores (documentação de onboarding)
 
 ---
-
-## 🛠️ Infraestrutura e Deploy (Opcional)
-
-- [ ] Deploy automatizado (CI/CD) para ambiente de homologação/produção
-- [ ] Infraestrutura como código (IaC) para ambientes cloud (ex: Terraform, Ansible)
-- [ ] Observabilidade básica: logs, métricas e alertas (ex: Prometheus, Grafana, Sentry)

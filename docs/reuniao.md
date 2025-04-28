@@ -1,6 +1,34 @@
 # Reuniões
 
 
+## **Ata Reunião 1**
+
+**Data:** 09/04/2025
+
+**Horário:** 16:00 - 16:30
+
+**Local:** Google Meet
+<br>
+
+## Discussões
+
+#### Resumo:
+Ensinando os primeiros passos para a contribuição com o projeto Debian, sendo eles:
+- Conta no salsa: https://salsa.debian.org/public
+- Documentação oficial: https://debianbrasil.org.br/pt-br/empacotamento/empacotamento-101
+
+- Overview da comunidade do Debian
+- O monitor mostrou o funcionamento do repositorio do debian e exemplificou alguns pacotes.
+
+
+#### Decisões tomadas:
+- Todos precisam configurar o ambiente
+
+## Ações e Responsáveis
+| Ação | Responsável | Prazo |
+|:-----|:------------|:------|
+| Configurar Ambiente | Todos | 27/04 |
+
 ## **Ata Reunião 2**
 
 **Data:** 24/04/2025
