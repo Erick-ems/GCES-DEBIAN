@@ -698,21 +698,43 @@
 <ul>
 <li>[x] Repositório público no GitHub/GitLab (com histórico limpo e organizado)  </li>
 <li>Localizado no salsa: <a href="https://salsa.debian.org/debian-brasil-team">https://salsa.debian.org/debian-brasil-team</a></li>
-<li>[ ] Uso de <code>git-flow</code> ou similar para estratégia de branches</li>
-<li>[ ] Versionamento semântico (SemVer) aplicado</li>
-<li>[ ] Tags e releases publicados com <strong>Release Notes</strong> claras</li>
+<li>[ ] Uso de <code>git-flow</code> ou similar para estratégia de branches
+  <ul>
+    <li>
+      Não. Usam um fluxo simples baseado em branches como master, debian/, upstream e pristine-tar.
+    </li>
+  </ul>
+</li>
+<li>[ ] Versionamento semântico (SemVer) aplicado
+  <ul>
+    <li>
+      Não. O Debian Brasil usa o esquema de versionamento Debian, baseado em upstream_version-debian_revision, diferente do <i>SemVer</i>. Ex.: 6.4.13-5 (A versão do upstream é 6.4.13 e houveram 5 revisões do debian).
+    </li>
+  </ul>
+</li>
+<li>[x] Tags e releases publicados com <strong>Release Notes</strong> claras
+  <ul>
+    <li>
+      Não de forma sistemática. Normalmente usam tags para marcar versões (ex: debian/6.4.13-5, [<a href="https://salsa.debian.org/python-team/packages/jupyter-notebook/-/tags">https://salsa.debian.org/python-team/packages/jupyter-notebook/-/tags</a>]), mas não publicam <i>Release Notes</i> nas tags. As mudanças ficam nos arquivos debian/changelog.
+    </li>
+  </ul>
+</li>
 <li>[ ] GitHub Actions / GitLab CI configurado com:</li>
-<li>[ ] Build automatizado</li>
-<li>[ ] Testes automatizados (unitários/integrados)</li>
-<li>[x] Linter (ex: ESLint, Flake8, etc.)<ul>
-<li>Encontrado em: <a href="https://salsa.debian.org/Oleari/python-humanize/-/blob/master/.github/CONTRIBUTING.md">Contribuindo para o Projeto — Debian Salsa</a></li>
+<ul>
+  <ul>
+    <li>O Debian usa o Salsa CI. A documentação pode ser encontrada em: <a href="https://salsa.debian.org/salsa-ci-team/pipeline#basic-use">https://salsa.debian.org/salsa-ci-team/pipeline#basic-use</a></li>
+  </ul>
+  <li>[x] Build automatizado</li>
+  <li>[x] Testes automatizados (unitários/integrados)</li>
+  <li>[x] Linter (ex: ESLint, Flake8, etc.)
+    <ul>
+      <li> Usa o Lintian para verificar problemas no pacote</li>
+    </ul>
+  </li>
+  <li>[x] Validação de segurança e dependências (ex: Dependabot, Snyk) 
+  </li>
+  <li>[ ] Arquivos de configuração de ambiente: <code>Dockerfile</code>, <code>docker-compose.yml</code>, <code>.env.example</code></li>
 </ul>
-</li>
-<li>[x] Validação de segurança e dependências (ex: Dependabot, Snyk)<ul>
-<li>Encontrado em: <a href="https://salsa.debian.org/Oleari/python-humanize/-/blob/master/.github/SECURITY.md">Políticas de Segurança — Debian Salsa</a></li>
-</ul>
-</li>
-<li>[ ] Arquivos de configuração de ambiente: <code>Dockerfile</code>, <code>docker-compose.yml</code>, <code>.env.example</code></li>
 </ul>
 <hr />
 <h2 id="documentacao">📚 Documentação<a class="headerlink" href="#documentacao" title="Permanent link">&para;</a></h2>
