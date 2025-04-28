@@ -10,10 +10,11 @@
 - [ ] GitHub Actions / GitLab CI configurado com:
   - [ ] Build automatizado
   - [ ] Testes automatizados (unitários/integrados)
-  - [ ] Linter (ex: ESLint, Flake8, etc.)
-  - [ ] Validação de segurança e dependências (ex: Dependabot, Snyk)
-- [ ] Arquivos de configuração de ambiente: `Dockerfile`, `docker-compose.yml`, `.env.example`
-
+  - [x] Linter (ex: ESLint, Flake8, etc.)
+    - Encontrado em: [Contribuindo para o Projeto — Debian Salsa](https://salsa.debian.org/Oleari/python-humanize/-/blob/master/.github/CONTRIBUTING.md)
+  - [x] Validação de segurança e dependências (ex: Dependabot, Snyk)
+    - Encontrado em: [Políticas de Segurança — Debian Salsa](https://salsa.debian.org/Oleari/python-humanize/-/blob/master/.github/SECURITY.md)
+  - [ ] Arquivos de configuração de ambiente: `Dockerfile`, `docker-compose.yml`, `.env.example`
 ---
 
 ## 📚 Documentação

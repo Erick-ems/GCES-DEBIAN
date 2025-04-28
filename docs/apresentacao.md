@@ -17,16 +17,16 @@ O objetivo do projeto é documentar e aplicar práticas de **empacotamento de so
 
 ## 👥 Contribuidores
 
-Os seguintes estudantes e colaboradores participaram ativamente do desenvolvimento deste projeto:
+Os seguintes estudantes que participam do desenvolvimento deste projeto:
 
-- **Erick Santos**
-- **Guilherme Oliveira**
-- **Israel Thalles Dutra dos Santos**
-- **João Pedro** (Monitor)
-- **Maria Clara Oleari**
-- **Matheus Henrick Dutra dos Santos**
-- **Natália Rodrigues de Morais**
+- **Erick Santos - 211061672**
+- **Guilherme Oliveira - 180113496**
+- **Israel Thalles Dutra dos Santos - 190014776**
+- **Maria Clara Oleari - 221008338**
+- **Matheus Henrick Dutra dos Santos - 190018101**
+- **Natália Rodrigues de Morais - 221037975**
 - **Pedro de Miranda Haick**
+- **Raphaela Guimarães - 190116072**
 
 ---
 

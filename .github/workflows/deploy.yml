@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages
+      - gh-pages  # Sempre que houver push na branch gh-pages
 
 permissions:
   contents: write
@@ -37,4 +37,11 @@ jobs:
         run: mkdocs build
 
       - name: Deploy to GitHub Pages
-        run: ghp-import -n -p -f site
+        run: |
+          # Apaga a branch 'gh-pages' se necessário, e depois faz o push para a branch 'main'
+          git checkout main
+          git pull origin main
+          cp -R site/* .
+          git add .
+          git commit -m "Deploy updated site"
+          git push origin main

@@ -17,6 +17,9 @@ nav:
   - Privacidade: privacidade.md
   - Roadmap: roadmap.md
   - Termos de Uso: termos.md
+  - Reuniões: reuniao.md
+  - Pacotes:
+      - Maria Clara: pacotes/mariaClara.md
 
 markdown_extensions:
   - toc:
