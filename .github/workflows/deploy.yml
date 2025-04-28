@@ -1,21 +1,21 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (main)
 
 on:
   push:
     branches:
-      - gh-pages
-
-permissions:
-  contents: write
-  pages: write
+      - gh-pages  # Aciona quando há push no gh-pages
 
 jobs:
-  deploy:
+  deploy-to-main:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Permite push para o branch main
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages  # Faz checkout do gh-pages (onde estão seus arquivos fonte)
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,30 +24,23 @@ jobs:
 
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-material ghp-import
+          pip install mkdocs mkdocs-material
 
-      - name: Configure Git with token
+      - name: Build the site
+        run: mkdocs build --site-dir ./site
+
+      - name: Deploy to main branch
         run: |
+          git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git config --global user.name "github-actions"
-          git remote set-url origin https://${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}
-
-      - name: Build the documentation
-        run: mkdocs build
-
-      - name: Deploy to GitHub Pages (overwrite main)
-        run: |
-          git fetch origin
-          git reset --hard
-          git checkout main
-          git rm -rf .
-          if [ -d "site" ]; then
-            cp -R site/* .
-          else
-            echo "Erro: a pasta 'site' não foi encontrada"
-            exit 1
-          fi
+          
+          git clone --branch main --depth 1 https://github.com/${{ github.repository }}.git main-branch
+          cd main-branch
+          
+          rm -rf *
+          
+          cp -r ../site/* .
+          
           git add .
-          git commit -m "Deploy updated site (overwrite main)"
-          git push origin main --force
+          git commit -m "Deploy site (gh-pages -> main)"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git main
