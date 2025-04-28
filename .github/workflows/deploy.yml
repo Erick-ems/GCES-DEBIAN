@@ -39,13 +39,16 @@ jobs:
       - name: Deploy to GitHub Pages (overwrite main)
         run: |
           git fetch origin
+          
+          git reset --hard
 
           git checkout main
-
+          
           git rm -rf .
 
           cp -R site/* .
 
           git add .
           git commit -m "Deploy updated site (overwrite main)"
+          
           git push origin main --force
