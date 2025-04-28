@@ -546,15 +546,149 @@
 
 
 <h1 id="roadmap-cronograma">Roadmap / Cronograma<a class="headerlink" href="#roadmap-cronograma" title="Permanent link">&para;</a></h1>
-<p><iframe
-  width="1280"
-  height="720"
-  src="https://miro.com/app/live-embed/uXjVI9CMBSs=/?moveToViewport=-1230,-574,2472,1302"
-  frameborder="0"
-  scrolling="no"
-  allowfullscreen
-></iframe>
-</p>
+<h1 id="roadmap-de-empacotamento-debian">Roadmap de Empacotamento Debian<a class="headerlink" href="#roadmap-de-empacotamento-debian" title="Permanent link">&para;</a></h1>
+<h2 id="visao-geral">📍 Visão Geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
+<p>Este roadmap descreve as etapas essenciais para o empacotamento de softwares no formato Debian (.deb), desde o planejamento até a publicação e manutenção dos pacotes.</p>
+<h2 id="etapas-do-roadmap">Etapas do Roadmap<a class="headerlink" href="#etapas-do-roadmap" title="Permanent link">&para;</a></h2>
+<h3 id="1-planejamento-inicial">1. Planejamento Inicial<a class="headerlink" href="#1-planejamento-inicial" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Definir quais softwares serão empacotados.</li>
+<li>Levantar dependências e compatibilidades.</li>
+<li>Escolher a versão alvo do Debian (stable, testing, unstable).</li>
+</ul>
+<h3 id="2-preparacao-do-ambiente">2. Preparação do Ambiente<a class="headerlink" href="#2-preparacao-do-ambiente" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Montar ambiente de build:</li>
+<li>Instalar ferramentas necessárias:</li>
+<li><code>dpkg-dev</code>, <code>lintian</code>, <code>devscripts</code>, entre outros.</li>
+</ul>
+<h3 id="3-empacotar-o-software">3. Empacotar o Software<a class="headerlink" href="#3-empacotar-o-software" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Criar o diretório <code>debian/</code> dentro do código-fonte.</li>
+<li>Escrever arquivos essenciais:</li>
+<li><code>control</code>, <code>rules</code>, <code>changelog</code>, <code>copyright</code>.</li>
+<li>Gerar o primeiro pacote <code>.deb</code> funcional.</li>
+</ul>
+<h3 id="4-testes-de-empacotamento">4. Testes de Empacotamento<a class="headerlink" href="#4-testes-de-empacotamento" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instalar o <code>.deb</code> em ambiente isolado.</li>
+<li>Executar ferramentas de verificação:</li>
+<li><code>lintian</code>, <code>piuparts</code>, entre outras.</li>
+</ul>
+<h3 id="5-ajustes-e-melhorias">5. Ajustes e Melhorias<a class="headerlink" href="#5-ajustes-e-melhorias" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Corrigir erros e warnings apontados nas validações.</li>
+<li>Atualizar as dependências e metadados no <code>control</code>.</li>
+<li>Melhorar scripts de instalação e remoção</li>
+</ul>
+<h3 id="6-assinatura-e-publicacao">6. Assinatura e Publicação<a class="headerlink" href="#6-assinatura-e-publicacao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Assinar pacotes (se necessário).</li>
+<li>Publicar pacotes:</li>
+<li>Preparar submissão para repositório oficial Debian.</li>
+</ul>
+<h3 id="7-manutencao">7. Manutenção<a class="headerlink" href="#7-manutencao" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Atualizar pacotes com novas versões.</li>
+<li>Corrigir bugs e vulnerabilidades de segurança.</li>
+<li>Realizar rebuilds periódicos conforme novas dependências.</li>
+</ul>
+<hr />
+<h2 id="cronograma">📅 Cronograma<a class="headerlink" href="#cronograma" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Semana</th>
+<th style="text-align: left;">Atividade</th>
+<th style="text-align: left;">Responsáveis</th>
+<th style="text-align: left;">Observação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Definição de softwares e análise de dependências</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Completar lista até o final da semana</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Preparação do ambiente de build</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Testar pbuilder e sbuild</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Empacotar Software</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Gerar .deb inicial</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Empacotar Software</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Gerar .deb inicial</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Empacotar Software</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Gerar .deb inicial</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Empacotar Software</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Gerar .deb inicial</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Empacotar Software</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Gerar .deb inicial</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: left;">Testes gerais e correções</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Rodar lintian, piuparts, corrigir problemas</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: left;">Assinar pacotes e configurar repositório interno</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Teste de distribuição</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: left;">Documentar processo e preparar manutenção</td>
+<td style="text-align: left;">Todo o grupo</td>
+<td style="text-align: left;">Atualizar instruções internas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ferramentas-recomendadas">📂 Ferramentas Recomendadas<a class="headerlink" href="#ferramentas-recomendadas" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>dh_make</code>: Criar esqueleto inicial de empacotamento.</li>
+<li><code>debuild</code>: Gerar o pacote <code>.deb</code>.</li>
+<li><code>pbuilder</code> / <code>sbuild</code>: Build limpo em ambiente isolado.</li>
+<li><code>lintian</code>: Validar a qualidade do pacote.</li>
+<li><code>piuparts</code>: Testar instalação e remoção do pacote.</li>
+<li><code>reprepro</code> / <code>aptly</code>: Gerenciar repositórios APT internos.</li>
+</ul>
+<hr />
+<h2 id="checklist-para-cada-pacote">🔄 Checklist para Cada Pacote<a class="headerlink" href="#checklist-para-cada-pacote" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Diretório <code>debian/</code> criado.</li>
+<li>[ ] Arquivos obrigatórios escritos (<code>control</code>, <code>rules</code>, etc).</li>
+<li>[ ] Build bem-sucedido em ambiente isolado.</li>
+<li>[ ] Instalação e remoção testadas.</li>
+<li>[ ] Validação com <code>lintian</code> realizada.</li>
+<li>[ ] Pacote assinado (se aplicável).</li>
+<li>[ ] Documentação interna atualizada.</li>
+</ul>
+<hr />
 
 
 
