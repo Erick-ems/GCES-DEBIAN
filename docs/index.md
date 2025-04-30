@@ -16,6 +16,7 @@ Este site reúne a documentação do projeto de Gerência de Configuração e Ev
 - 🚀 [Roadmap](roadmap.md)
 - 📝 [Termos de Uso](termos.md)
 - 📅 [Reuniões](reuniao.md)
+- 🚀[Diario de Bordo](diario.md)
 - 📦 [Pacotes](/pacotes/mariaClara)
 
 ---
