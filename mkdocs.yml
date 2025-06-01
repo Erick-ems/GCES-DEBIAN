@@ -19,7 +19,7 @@ nav:
   - Termos de Uso: termos.md
   - Reuniões: reuniao.md
   - Diario de Bordo: diario.md
-  - Novo Checklit: newChecklist.md
+  - Novo Checklist: newChecklist.md
   - Pacotes:
       - Maria Clara: pacotes/mariaClara.md
 
@@ -32,3 +32,17 @@ markdown_extensions:
   - codehilite
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.snippets
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tasklist
+  - pymdownx.tilde
+  - pymdownx.caret
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
