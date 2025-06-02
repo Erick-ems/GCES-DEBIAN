@@ -18,4 +18,8 @@
 - [ ] O `debian/changelog` foi atualizado.
 - [ ] O código está documentado quando aplicável.
 - [ ] Os commits seguem a convenção abaixo.
-
+- [] Todos os patches estão em `debian/patches/`
+- [] Cada patch possui cabeçalho DEP-3
+- [] O arquivo `series` lista os patches
+- [] `debuild -us -uc` roda sem erro
+- [] O `.orig.tar.gz` está na pasta raiz
