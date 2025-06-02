@@ -22,6 +22,11 @@ nav:
   - Novo Checklist: newChecklist.md
   - Pacotes:
       - Maria Clara: pacotes/mariaClara.md
+  - Tutorial:
+      - Standards: tutorial/tutorialStandard.md
+      - Roadmap: tutorial/roadmap.md
+      - Vesões: tutorial/tutorialVersion.md
+      - Empacotamento: tutorial/tutorialEmpacotamento.md
 
 markdown_extensions:
   - toc:
