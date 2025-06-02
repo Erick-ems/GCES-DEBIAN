@@ -13,10 +13,8 @@
       
       
       
-        <link rel="prev" href="../tutorialStandard/">
+        <link rel="prev" href="../tutorialEmpacotamento/">
       
-      
-        <link rel="next" href="../tutorialVersion/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>Roadmap - Empacotamento no Debian</title>
+        <title>Patches - Empacotamento no Debian</title>
       
     
     
@@ -66,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#roadmap" class="md-skip">
+        <a href="#tutorial-corrigindo-e-aplicando-patches-em-um-pacote-debian-com-quilt-e-debuild" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Roadmap
+              Patches
             
           </span>
         </div>
@@ -658,30 +656,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Roadmap
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
         
   
   
@@ -692,78 +670,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Índice">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Índice
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
-    <span class="md-ellipsis">
-      🚀 Roadmap
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identificacao-de-pacotes-pacotes-de-times" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identificação de pacotes (Pacotes de times)
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#time-python" class="md-nav__link">
-    <span class="md-ellipsis">
-      Time python
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tracker-do-pacote" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tracker do pacote
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#git-do-pacote" class="md-nav__link">
-    <span class="md-ellipsis">
-      Git do pacote
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#criacao-da-issue" class="md-nav__link">
-    <span class="md-ellipsis">
-      Criação da issue
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -819,10 +725,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../tutorialPatches/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Patches
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -833,6 +761,206 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Índice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Índice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requisitos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 Requisitos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clone-o-repositorio-do-pacote" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧬 Clone o repositório do pacote
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configurar-o-ambiente-quilt" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚙️ Configurar o ambiente quilt
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicar-e-editar-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      🩹 Aplicar e editar patches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🩹 Aplicar e editar patches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-todos-os-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicar todos os patches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-um-patch-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editar um patch existente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizar-um-patch-com-quilt-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Atualizar um patch com quilt refresh
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adicionar-cabecalho-dep-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Adicionar cabeçalho DEP-3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧾 Adicionar cabeçalho DEP-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-cabecalho-valido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de cabeçalho válido:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifique-a-ordem-dos-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 Verifique a ordem dos patches
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limpando-e-buildando" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧹 Limpando e buildando
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧹 Limpando e buildando">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desaplique-todos-os-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desaplique todos os patches:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpe-a-build-anterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limpe a build anterior:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplique-os-patches-novamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplique os patches novamente:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faca-o-build-do-pacote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faça o build do pacote:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corrigindo-erro-de-tarball-orig" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Corrigindo erro de tarball .orig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviando-alteracoes-para-seu-fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 Enviando alterações para seu fork
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Checklist Final
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -862,6 +990,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -870,54 +1000,180 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#roadmap" class="md-nav__link">
+  <a href="#requisitos" class="md-nav__link">
     <span class="md-ellipsis">
-      🚀 Roadmap
+      🔧 Requisitos
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#identificacao-de-pacotes-pacotes-de-times" class="md-nav__link">
+  <a href="#clone-o-repositorio-do-pacote" class="md-nav__link">
     <span class="md-ellipsis">
-      Identificação de pacotes (Pacotes de times)
+      🧬 Clone o repositório do pacote
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#time-python" class="md-nav__link">
+  <a href="#configurar-o-ambiente-quilt" class="md-nav__link">
     <span class="md-ellipsis">
-      Time python
+      ⚙️ Configurar o ambiente quilt
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#tracker-do-pacote" class="md-nav__link">
+  <a href="#aplicar-e-editar-patches" class="md-nav__link">
     <span class="md-ellipsis">
-      Tracker do pacote
+      🩹 Aplicar e editar patches
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🩹 Aplicar e editar patches">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#aplicar-todos-os-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicar todos os patches
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editar-um-patch-existente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Editar um patch existente
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#atualizar-um-patch-com-quilt-refresh" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✏️ Atualizar um patch com quilt refresh
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-do-pacote" class="md-nav__link">
+  <a href="#adicionar-cabecalho-dep-3" class="md-nav__link">
     <span class="md-ellipsis">
-      Git do pacote
+      🧾 Adicionar cabeçalho DEP-3
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧾 Adicionar cabeçalho DEP-3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-cabecalho-valido" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de cabeçalho válido:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifique-a-ordem-dos-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      📜 Verifique a ordem dos patches
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#criacao-da-issue" class="md-nav__link">
+  <a href="#limpando-e-buildando" class="md-nav__link">
     <span class="md-ellipsis">
-      Criação da issue
+      🧹 Limpando e buildando
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🧹 Limpando e buildando">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#desaplique-todos-os-patches" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desaplique todos os patches:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limpe-a-build-anterior" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limpe a build anterior:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aplique-os-patches-novamente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplique os patches novamente:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#faca-o-build-do-pacote" class="md-nav__link">
+    <span class="md-ellipsis">
+      Faça o build do pacote:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#corrigindo-erro-de-tarball-orig" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧰 Corrigindo erro de tarball .orig
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviando-alteracoes-para-seu-fork" class="md-nav__link">
+    <span class="md-ellipsis">
+      📤 Enviando alterações para seu fork
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Checklist Final
     </span>
   </a>
   
@@ -939,37 +1195,120 @@
 
 
 
-  <h1>Roadmap</h1>
-
-<h2 id="roadmap">🚀 Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h2>
-<pre class="mermaid"><code>graph TD
-    A([CONFIGURANDO AMBIENTE]) --&gt; B([IDENTIFICAÇÃO DE PACOTES])
-    B --&gt; C([NOVOS PACOTES])
-    B --&gt; D([PACOTES ÓRFÃOS])
-    B --&gt; E([PACOTES DE TIMES])
-    C --&gt; F([PROCESSO DE CONTRIBUIÇÃO])
-    D --&gt; F([PROCESSO DE CONTRIBUIÇÃO])
-    E --&gt; F([PROCESSO DE CONTRIBUIÇÃO])
-    F --&gt; G([CRIAÇÃO DE ISSUE NO SALSA])
-
-    click A "https://debianbrasil.org.br/empacotamento/configurando-seu-ambiente"
-    click B "https://www.debian.org/distrib/packages#view"
-    click C "https://ftp-master.debian.org/new.html"
-    click D "https://www.debian.org/devel/wnpp/orphaned"
-    click E "https://tracker.debian.org/teams/"
-    click F "https://debianbrasil.org.br/processo-de-contribuicao-com-pacotes"
-    click G "https://salsa.debian.org/debian-brasil-team/docs/-/issues/new"
-</code></pre>
-<h2 id="identificacao-de-pacotes-pacotes-de-times">Identificação de pacotes (Pacotes de times)<a class="headerlink" href="#identificacao-de-pacotes-pacotes-de-times" title="Permanent link">&para;</a></h2>
-<p><img alt="Team Workflow" src="../../img/teamw.jpg" /></p>
-<h2 id="time-python">Time python<a class="headerlink" href="#time-python" title="Permanent link">&para;</a></h2>
-<p><img alt="Team Python" src="../../img/pythonTeam.jpg" /></p>
-<h2 id="tracker-do-pacote">Tracker do pacote<a class="headerlink" href="#tracker-do-pacote" title="Permanent link">&para;</a></h2>
-<p><img alt="Tracker do pacote" src="../../img/trackerPacote.jpg" /></p>
-<h2 id="git-do-pacote">Git do pacote<a class="headerlink" href="#git-do-pacote" title="Permanent link">&para;</a></h2>
-<p><img alt="Git do Pacote" src="../../img/clonandoPackege.jpg" /></p>
-<h2 id="criacao-da-issue">Criação da issue<a class="headerlink" href="#criacao-da-issue" title="Permanent link">&para;</a></h2>
-<p><img alt="Issue " src="../../img/issue.jpg" /></p>
+<h1 id="tutorial-corrigindo-e-aplicando-patches-em-um-pacote-debian-com-quilt-e-debuild">📦 Tutorial: Corrigindo e Aplicando Patches em um Pacote Debian com <code>quilt</code> e <code>debuild</code><a class="headerlink" href="#tutorial-corrigindo-e-aplicando-patches-em-um-pacote-debian-com-quilt-e-debuild" title="Permanent link">&para;</a></h1>
+<p>Este guia mostra como aplicar e corrigir patches em um pacote Debian usando <code>quilt</code>, garantir conformidade com o DEP-3, e buildar corretamente com <code>debuild</code>.</p>
+<hr />
+<h2 id="requisitos">🔧 Requisitos<a class="headerlink" href="#requisitos" title="Permanent link">&para;</a></h2>
+<p>Instale os pacotes necessários:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>devscripts<span class="w"> </span>build-essential<span class="w"> </span>quilt<span class="w"> </span>debhelper
+</code></pre></div>
+<hr />
+<h2 id="clone-o-repositorio-do-pacote">🧬 Clone o repositório do pacote<a class="headerlink" href="#clone-o-repositorio-do-pacote" title="Permanent link">&para;</a></h2>
+<p>Clone o seu <em>fork</em> do repositório no Salsa:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@salsa.debian.org:SEU_USUARIO/wxedid.git
+<span class="nb">cd</span><span class="w"> </span>wxedid
+</code></pre></div>
+<hr />
+<h2 id="configurar-o-ambiente-quilt">⚙️ Configurar o ambiente <code>quilt</code><a class="headerlink" href="#configurar-o-ambiente-quilt" title="Permanent link">&para;</a></h2>
+<p>Configure as variáveis de ambiente para o <code>quilt</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_PATCHES</span><span class="o">=</span>debian/patches
+<span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_REFRESH_ARGS</span><span class="o">=</span><span class="s2">&quot;--no-timestamps --no-index -p ab&quot;</span>
+</code></pre></div>
+<p>Essas variáveis:
+- Dizem ao <code>quilt</code> onde estão os patches.
+- Evitam timestamps e índices nos diffs.</p>
+<hr />
+<h2 id="aplicar-e-editar-patches">🩹 Aplicar e editar patches<a class="headerlink" href="#aplicar-e-editar-patches" title="Permanent link">&para;</a></h2>
+<h3 id="aplicar-todos-os-patches">Aplicar todos os patches<a class="headerlink" href="#aplicar-todos-os-patches" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="editar-um-patch-existente">Editar um patch existente<a class="headerlink" href="#editar-um-patch-existente" title="Permanent link">&para;</a></h3>
+<p>Abra o patch com seu editor:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>debian/patches/spelling.patch
+</code></pre></div>
+<blockquote>
+<p>Ou edite os arquivos do código fonte e depois atualize com <code>quilt refresh</code>.</p>
+</blockquote>
+<hr />
+<h2 id="atualizar-um-patch-com-quilt-refresh">✏️ Atualizar um patch com <code>quilt refresh</code><a class="headerlink" href="#atualizar-um-patch-com-quilt-refresh" title="Permanent link">&para;</a></h2>
+<p>Se você editou o código-fonte diretamente (e não o patch):</p>
+<ol>
+<li>
+<p>Certifique-se de que o patch está aplicado:
+   <div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>spelling.patch
+</code></pre></div></p>
+</li>
+<li>
+<p>Atualize:
+   <div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>refresh
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="adicionar-cabecalho-dep-3">🧾 Adicionar cabeçalho DEP-3<a class="headerlink" href="#adicionar-cabecalho-dep-3" title="Permanent link">&para;</a></h2>
+<p>Todo patch deve ter um cabeçalho <a href="https://dep-team.pages.debian.net/deps/dep3/">DEP-3</a>.</p>
+<h3 id="exemplo-de-cabecalho-valido">Exemplo de cabeçalho válido:<a class="headerlink" href="#exemplo-de-cabecalho-valido" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Description: Corrige erros de ortografia em mensagens e comentários
+Author: Maria &lt;maria@exemplo.com&gt;
+Bug-Debian: https://bugs.debian.org/123456
+Forwarded: no
+Last-Update: 2025-06-01
+</code></pre></div>
+<p>Abra o patch para editar:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>debian/patches/spelling.patch
+</code></pre></div>
+<p>E adicione o cabeçalho acima no topo.</p>
+<hr />
+<h2 id="verifique-a-ordem-dos-patches">📜 Verifique a ordem dos patches<a class="headerlink" href="#verifique-a-ordem-dos-patches" title="Permanent link">&para;</a></h2>
+<p>Abra o arquivo <code>debian/patches/series</code> e veja se o seu patch está listado:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>debian/patches/series
+</code></pre></div>
+<p>Se necessário, adicione o nome do patch no final do arquivo (sem caminho, só o nome do <code>.patch</code>).</p>
+<hr />
+<h2 id="limpando-e-buildando">🧹 Limpando e buildando<a class="headerlink" href="#limpando-e-buildando" title="Permanent link">&para;</a></h2>
+<h3 id="desaplique-todos-os-patches">Desaplique todos os patches:<a class="headerlink" href="#desaplique-todos-os-patches" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>pop<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="limpe-a-build-anterior">Limpe a build anterior:<a class="headerlink" href="#limpe-a-build-anterior" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>clean
+</code></pre></div>
+<h3 id="aplique-os-patches-novamente">Aplique os patches novamente:<a class="headerlink" href="#aplique-os-patches-novamente" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="faca-o-build-do-pacote">Faça o build do pacote:<a class="headerlink" href="#faca-o-build-do-pacote" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+</code></pre></div>
+<hr />
+<h2 id="corrigindo-erro-de-tarball-orig">🧰 Corrigindo erro de tarball <code>.orig</code><a class="headerlink" href="#corrigindo-erro-de-tarball-orig" title="Permanent link">&para;</a></h2>
+<p>Se o build falhar com erro de <code>.orig.tar.gz</code> ausente:</p>
+<ol>
+<li>Baixe o tarball original da upstream (ex: do GitHub, site do autor etc).</li>
+<li>Renomeie com o nome correto:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>~/Downloads/wxedid-0.0.32.tar.gz<span class="w"> </span>../wxedid_0.0.32.orig.tar.gz
+</code></pre></div>
+<ol>
+<li>Tente buildar novamente:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+</code></pre></div>
+<hr />
+<h2 id="enviando-alteracoes-para-seu-fork">📤 Enviando alterações para seu fork<a class="headerlink" href="#enviando-alteracoes-para-seu-fork" title="Permanent link">&para;</a></h2>
+<p>Adicione e <em>commite</em> os patches e o arquivo <code>series</code>:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>debian/patches/*
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix spelling errors and add DEP-3 metadata to patch&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div>
+<hr />
+<h2 id="checklist-final">✅ Checklist Final<a class="headerlink" href="#checklist-final" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Todos os patches estão em <code>debian/patches/</code></li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Cada patch possui cabeçalho DEP-3</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> O arquivo <code>series</code> lista os patches</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> <code>debuild -us -uc</code> roda sem erro</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> O <code>.orig.tar.gz</code> está na pasta raiz</li>
+</ul>
 
 
 

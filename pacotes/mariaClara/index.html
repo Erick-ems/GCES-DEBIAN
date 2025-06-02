@@ -16,7 +16,7 @@
         <link rel="prev" href="../../newChecklist/">
       
       
-        <link rel="next" href="../../tutorial/tutorialStandard/">
+        <link rel="next" href="../erickSantos/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -618,6 +618,52 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../erickSantos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Erick Santos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nataliaRodrigues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Natalia Rodrigues
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -755,6 +801,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorial/tutorialPatches/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Patches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -861,6 +930,87 @@
 <li><strong>Issue</strong>: https://salsa.debian.org/debian-brasil-team/docs/-/issues/473</li>
 </ul>
 <p><img alt="Merge Request" src="../../img/mrMaria1.png" /></p>
+<h1 id="atualizacao-do-pacote-python-immutabledict">Atualização do Pacote python-immutabledict<a class="headerlink" href="#atualizacao-do-pacote-python-immutabledict" title="Permanent link">&para;</a></h1>
+<h2 id="descricao-do-pacote_1">Descrição do Pacote<a class="headerlink" href="#descricao-do-pacote_1" title="Permanent link">&para;</a></h2>
+<p>O pacote python-immutabledict fornece uma implementação de dicionário imutável para Python, permitindo a criação de objetos de mapeamento que não podem ser modificados após sua criação. Este recurso é útil para garantir a integridade de dados em aplicações que exigem estruturas de dados seguras e estáveis.</p>
+<p><img alt="Tracker do pacote" src="../../img/pythonImmutabledict.png" /></p>
+<h2 id="alteracoes-realizadas_1">Alterações Realizadas<a class="headerlink" href="#alteracoes-realizadas_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Atualização para a versão upstream 2.2.4: A versão mais recente foi integrada ao pacote.</li>
+<li>Atualização da versão de standards: A versão de standards do pacote foi atualizada para refletir as melhores práticas do Debian, garantindo conformidade com as políticas mais recentes.</li>
+</ul>
+<h2 id="detalhes-tecnicos_1">Detalhes Técnicos<a class="headerlink" href="#detalhes-tecnicos_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Versão Upstream: 2.2.4</li>
+<li>Versão Debian: 2.2.4-1</li>
+</ul>
+<h2 id="links-uteis_1">Links Úteis<a class="headerlink" href="#links-uteis_1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Tracker do Pacote: https://tracker.debian.org/pkg/python-immutabledict</p>
+</li>
+<li>
+<p>Repositório do Salsa: https://salsa.debian.org/python-team/packages/python-immutabledict</p>
+</li>
+<li>
+<p>Lintian: https://udd.debian.org/lintian/?packages=python-immutabledict</p>
+</li>
+<li>
+<p>Merge Request: https://salsa.debian.org/python-team/packages/python-immutabledict/-/merge_requests/2 </p>
+</li>
+</ul>
+<p><img alt="Merge Request" src="../../img/mrMaria2.png" /></p>
+<h1 id="patch-para-o-pacote-wxedid">Patch para o Pacote <code>wxedid</code><a class="headerlink" href="#patch-para-o-pacote-wxedid" title="Permanent link">&para;</a></h1>
+<h2 id="descricao-do-pacote_2">Descrição do Pacote<a class="headerlink" href="#descricao-do-pacote_2" title="Permanent link">&para;</a></h2>
+<p>O pacote <code>wxedid</code> é uma aplicação gráfica que permite ler e interpretar os dados EDID de monitores, facilitando a identificação de problemas de configuração e compatibilidade de displays.</p>
+<p><img alt="Tracker do pacote" src="../../img/wxedid.png" /></p>
+<h2 id="patch-realizado">Patch Realizado<a class="headerlink" href="#patch-realizado" title="Permanent link">&para;</a></h2>
+<p>Foi desenvolvido um patch para corrigir erros. Metadados DEP-3 ausentes ou inválidos: corrigidos diretamente no patch.</p>
+<p>Aplicando o Cabeçalho DEP-3:</p>
+<div class="highlight"><pre><span></span><code>Description: Corrige o problema X relacionado a Y
+Author: Seu Nome &lt;seu.email@exemplo.com&gt;
+Bug-Debian: https://bugs.debian.org/123456
+Forwarded: no
+Last-Update: 2025-06-01
+</code></pre></div>
+<blockquote>
+<p>Os campos mínimos recomendados são Description, Author, Forwarded, e Last-Update. Veja mais detalhes aqui: https://dep-team.pages.debian.net/deps/dep3/</p>
+</blockquote>
+<h3 id="detalhes-do-patch">Detalhes do Patch<a class="headerlink" href="#detalhes-do-patch" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Patch armazenado em <code>debian/patches/spelling.patch</code>.</li>
+</ul>
+<h2 id="ferramentas-e-procedimentos">Ferramentas e Procedimentos<a class="headerlink" href="#ferramentas-e-procedimentos" title="Permanent link">&para;</a></h2>
+<h3 id="utilizacao-do-quilt">Utilização do <code>quilt</code>:<a class="headerlink" href="#utilizacao-do-quilt" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_PATCHES</span><span class="o">=</span>debian/patches
+<span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_REFRESH_ARGS</span><span class="o">=</span><span class="s2">&quot;--no-timestamps --no-index -p ab&quot;</span>
+
+quilt<span class="w"> </span>push<span class="w"> </span>-a<span class="w">             </span><span class="c1"># Aplica todos os patches</span>
+nano<span class="w"> </span>debian/patches/spelling.patch<span class="w">  </span><span class="c1"># Edita o patch</span>
+quilt<span class="w"> </span>refresh<span class="w">             </span><span class="c1"># Atualiza o patch após modificações</span>
+</code></pre></div>
+<h3 id="build-e-validacao">Build e Validação:<a class="headerlink" href="#build-e-validacao" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>pop<span class="w"> </span>-a<span class="w">              </span><span class="c1"># Remove todos os patches</span>
+debuild<span class="w"> </span>clean<span class="w">             </span><span class="c1"># Limpa a build anterior</span>
+quilt<span class="w"> </span>push<span class="w"> </span>-a<span class="w">             </span><span class="c1"># Aplica novamente os patches</span>
+debuild<span class="w"> </span>-us<span class="w"> </span>-uc<span class="w">           </span><span class="c1"># Constrói o pacote</span>
+</code></pre></div>
+<h2 id="links-uteis_2">Links Úteis<a class="headerlink" href="#links-uteis_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Link do Tracker: https://tracker.debian.org/pkg/wxedid</p>
+</li>
+<li>
+<p>Link do Salsa: https://salsa.debian.org/debian/wxedid</p>
+</li>
+<li>
+<p>Link do lintian do pacote (se existir): https://udd.debian.org/lintian/wxedid</p>
+</li>
+<li>
+<p>Link do Merge Request: debian/wxedid!1</p>
+</li>
+</ul>
+<p><img alt="Merge Request" src="../../img/mrMaria3.png" /></p>
 
 
 
