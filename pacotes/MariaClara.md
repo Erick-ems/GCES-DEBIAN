@@ -53,3 +53,66 @@ O pacote python-immutabledict fornece uma implementação de dicionário imutáv
 - Merge Request: https://salsa.debian.org/python-team/packages/python-immutabledict/-/merge_requests/2 
 
 ![Merge Request](../assets/images/mrMaria2.png)
+
+
+# Patch para o Pacote `wxedid`
+
+## Descrição do Pacote
+
+O pacote `wxedid` é uma aplicação gráfica que permite ler e interpretar os dados EDID de monitores, facilitando a identificação de problemas de configuração e compatibilidade de displays.
+
+![Tracker do pacote](../assets/images/wxedid.png)
+
+## Patch Realizado
+
+Foi desenvolvido um patch para corrigir erros. Metadados DEP-3 ausentes ou inválidos: corrigidos diretamente no patch.
+
+Aplicando o Cabeçalho DEP-3:
+
+```diff
+Description: Corrige o problema X relacionado a Y
+Author: Seu Nome <seu.email@exemplo.com>
+Bug-Debian: https://bugs.debian.org/123456
+Forwarded: no
+Last-Update: 2025-06-01
+```
+
+> Os campos mínimos recomendados são Description, Author, Forwarded, e Last-Update. Veja mais detalhes aqui: https://dep-team.pages.debian.net/deps/dep3/
+
+###  Detalhes do Patch
+
+- Patch armazenado em `debian/patches/spelling.patch`.
+
+##  Ferramentas e Procedimentos
+
+### Utilização do `quilt`:
+
+```bash
+export QUILT_PATCHES=debian/patches
+export QUILT_REFRESH_ARGS="--no-timestamps --no-index -p ab"
+
+quilt push -a             # Aplica todos os patches
+nano debian/patches/spelling.patch  # Edita o patch
+quilt refresh             # Atualiza o patch após modificações
+```
+
+### Build e Validação:
+
+```bash
+quilt pop -a              # Remove todos os patches
+debuild clean             # Limpa a build anterior
+quilt push -a             # Aplica novamente os patches
+debuild -us -uc           # Constrói o pacote
+```
+
+##  Links Úteis
+
+- Link do Tracker: https://tracker.debian.org/pkg/wxedid
+
+- Link do Salsa: https://salsa.debian.org/debian/wxedid
+
+- Link do lintian do pacote (se existir): https://udd.debian.org/lintian/wxedid
+
+- Link do Merge Request: debian/wxedid!1
+
+![Merge Request](../assets/images/mrMaria3.png)
