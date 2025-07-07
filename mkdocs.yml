@@ -30,6 +30,10 @@ nav:
       - Vesões: tutorial/tutorialVersion.md
       - Empacotamento: tutorial/tutorialEmpacotamento.md
       - Patches: tutorial/tutorialPatches.md
+      - Upstream: tutorial/tutorialUpstream.md
+      - Salsa: tutorial/tutorial-salsa-gitlab-ssh.md
+      - Ambiente: tutorial/tutorial-configurando-ambiente.md
+      - Tracker: tutorial/introducao_tracker.md
 
 markdown_extensions:
   - toc:

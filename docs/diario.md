@@ -5,7 +5,8 @@
 - Atas da Reunião 1  
 - Condução da 1ª e 2ª reunião  
 - Roadmap e cronograma do projeto  
-- Configuração do ambiente  
+- Configuração do ambiente
+- Elaboração dos empacotamentos
 
 ## Guilherme - 180113496
 - Elaboração dos seguintes artefatos no repositório e GitHub Pages:  
@@ -25,6 +26,8 @@
 - Template e atas da Reunião 2 e 3  
 - Configuração do ambiente  
 - Criação de uma nova issue e pedido de merge do pacote `python-humanize`  
+- Elaboração dos empacotamentos
+
 
 ## Matheus Henrick - 190018101
 - Lista de verificação: Gerência e controle de versão  
@@ -34,6 +37,8 @@
 - Participação na localização de links para o checklist  
 - Correção do checklist  
 - Configuração do ambiente  
+- Elaboração dos empacotamentos
+
 
 ## Pedro - 180129147
 - Checklist: Documentação  

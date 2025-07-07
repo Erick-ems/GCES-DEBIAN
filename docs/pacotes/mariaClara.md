@@ -115,3 +115,34 @@ debuild -us -uc           # Constrói o pacote
 - Link do Merge Request: debian/wxedid!1
 
 ![Merge Request](../img/mrMaria3.png)
+
+
+
+# Atualização do Pacote gojq
+
+## Descrição do Pacote¶
+
+O gojq é uma ferramenta de linha de comando escrita em Go para manipulação e consulta de dados em JSON, compatível com a sintaxe do popular utilitário jq. Ele permite realizar transformações complexas, buscas, filtros e formatações de maneira rápida e expressiva diretamente no terminal.
+
+Além de oferecer uma implementação fiel das funcionalidades do jq, o gojq se destaca por incluir suporte nativo a arquivos YAML, mensagens de erro mais detalhadas e tratamento mais preciso de números inteiros grandes.
+
+Este pacote também fornece uma biblioteca em Go, que pode ser utilizada por desenvolvedores para incorporar capacidades de processamento JSON diretamente em aplicações Go.
+
+![Tracker do pacote](../img/gojq.jpg)
+
+## Alterações Realizadas¶
+- **Atualização para a versão upstream 0.12.17:** A versão mais recente foi integrada ao pacote.
+
+## Detalhes Técnicos¶
+
+- **Versão Upstream:** 0.12.17
+- **Versão Debian:** 0.12.17-1
+
+## Links Úteis¶
+- **Tracker:** https://tracker.debian.org/pkg/gojq
+- **Salsa:** https://salsa.debian.org/go-team/packages/gojq
+- **Lintian do pacote (se existir):** https://udd.debian.org/lintian/?packages=gojq
+- **Merge:** https://salsa.debian.org/go-team/packages/gojq/-/merge_requests/5
+- **Issue:** https://salsa.debian.org/debian-brasil-team/docs/-/issues/320
+
+![Merge Request](../img/mrMaria5.jpg)
