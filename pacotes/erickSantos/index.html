@@ -976,6 +976,74 @@
 <li><strong>Atualização do Changelog</strong>: O changelog foi ajustado para refletir a nova versão dos padrões e inclui uma breve nota sobre a alteração realizada.</li>
 </ul>
 <p><img alt="Merge Request" src="../../img/mrLInk.png" /></p>
+<h1 id="atualizacao-do-pacote-python-project-generator-definitions">Atualização do Pacote python-project-generator-definitions<a class="headerlink" href="#atualizacao-do-pacote-python-project-generator-definitions" title="Permanent link">&para;</a></h1>
+<h2 id="descricao-do-pacote_1">Descrição do pacote<a class="headerlink" href="#descricao-do-pacote_1" title="Permanent link">&para;</a></h2>
+<p>python-project-generator-definitions é uma coleção de definições de alvos e MCUs (microcontroladores) utilizada pelo progen (Project Generator), uma ferramenta para geração de projetos multi-plataforma para desenvolvimento embarcado.
+As definições permitem configurar corretamente os parâmetros de compiladores, IDEs e toolchains para diferentes ambientes e dispositivos.</p>
+<h2 id="alteracoes-realizadas_1">Alterações Realizadas<a class="headerlink" href="#alteracoes-realizadas_1" title="Permanent link">&para;</a></h2>
+<p>Esta alteração faz o pacote python-project-generator-definitions compatível com a política mais recente do Debian.</p>
+<p><img alt="Tracker do pacote" src="../../img/trackerErick2.png" /></p>
+<p><img alt="Git Salsa" src="../../img/linkgit.png" /></p>
+<h1 id="atualizacao-do-pacote-actdiag">Atualização do Pacote actdiag<a class="headerlink" href="#atualizacao-do-pacote-actdiag" title="Permanent link">&para;</a></h1>
+<h2 id="descricao-do-pacote_2">📦 Descrição do Pacote<a class="headerlink" href="#descricao-do-pacote_2" title="Permanent link">&para;</a></h2>
+<p><strong>actdiag</strong> é uma ferramenta que gera imagens de <strong>diagramas de atividades (activity diagrams)</strong> a partir de arquivos de texto com sintaxe declarativa.
+Ela é especialmente útil em fluxos de documentação automatizada e integração com sistemas como Sphinx, permitindo visualizar processos de forma clara e visual.</p>
+<blockquote>
+<p>Este pacote fornece o módulo Python <code>python3-actdiag</code>, que interpreta os arquivos <code>.diag</code> e gera saídas SVG/PNG usando bibliotecas gráficas como <code>blockdiag</code> e <code>Pillow</code>.</p>
+</blockquote>
+<hr />
+<p><img alt="Tracker do pacote" src="../../img/actidieg.png" /></p>
+<h2 id="alteracoes-realizadas_2">✅ Alterações Realizadas<a class="headerlink" href="#alteracoes-realizadas_2" title="Permanent link">&para;</a></h2>
+<p>Este alteração propõe uma atualização técnica e de manutenção do pacote <strong>actdiag</strong>, incluindo:</p>
+<ul>
+<li><strong>📌 Atualização da Política Debian</strong>:</li>
+<li>A <strong>Standards-Version</strong> foi atualizada de <code>4.5.1</code> para <code>4.7.2</code>, conforme a <a href="https://www.debian.org/doc/debian-policy/">Debian Policy</a>.</li>
+<li>
+<p>Nenhuma mudança funcional foi necessária para compatibilidade com a nova política.</p>
+</li>
+<li>
+<p><strong>🧹 Estilo de Código Padronizado</strong>:</p>
+</li>
+<li>
+<p>Aplicação do formato <strong>Black</strong> (<code>X-Style: black</code>) ao código, conforme o commit <code>6c3f1a99</code>.</p>
+</li>
+<li>
+<p><strong>📎 Patch Local Avaliado</strong>:</p>
+</li>
+<li>O pacote possui um patch em <code>debian/patches/</code> sem informação de encaminhamento upstream.</li>
+<li>
+<p>A metadata foi mantida, mas recomenda-se revisão para confirmar se o patch pode ser enviado ao projeto original.</p>
+</li>
+<li>
+<p><strong>📝 Atualização do Changelog</strong>:</p>
+</li>
+<li>O <code>debian/changelog</code> foi modificado para registrar a atualização da política e a mudança de estilo.</li>
+</ul>
+<hr />
+<h2 id="situacao-do-pacote">🛠️ Situação do Pacote<a class="headerlink" href="#situacao-do-pacote" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Versão atual</strong>: <code>3.0.0+dfsg1-2</code></li>
+<li><strong>Distribuições</strong>: <code>testing</code>, <code>unstable</code></li>
+<li><strong>Arquitetura</strong>: <code>all</code></li>
+<li><strong>Mantenedores</strong>: Debian Python Team (DMD)</li>
+<li><strong>Uploaders</strong>: Kouhei Maeda, Alexandre Detiste</li>
+</ul>
+<hr />
+<h2 id="acao-sugerida">📌 Ação Sugerida<a class="headerlink" href="#acao-sugerida" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled/> Subir uma nova versão com a <strong>Standards-Version</strong> atualizada (<code>4.7.2</code>)</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Confirmar a situação do patch pendente e atualizar o campo <code>Forwarded</code> se necessário</li>
+<li class="task-list-item"><input type="checkbox" disabled/> Corrigir o aviso reportado pelo <code>lintian</code></li>
+<li class="task-list-item"><input type="checkbox" disabled/> Atualizar o <code>debian/changelog</code> com as alterações acima</li>
+</ul>
+<hr />
+<h2 id="referencias">🔗 Referências<a class="headerlink" href="#referencias" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://salsa.debian.org/python-team/packages/actdiag">Repositório no Salsa</a></li>
+<li><a href="https://tracker.debian.org/pkg/actdiag">Página do pacote no tracker Debian</a></li>
+<li><a href="https://salsa.debian.org/python-team/packages/actdiag/-/commits/master">Commits pendentes</a></li>
+<li><a href="https://lintian.debian.org/">Lintian</a></li>
+</ul>
 
 
 
