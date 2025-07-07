@@ -25,7 +25,7 @@ nav:
       - Erick Santos: pacotes/erickSantos.md
       - Natalia Rodrigues: pacotes/nataliaRodrigues.md
   - Tutorial:
-      - Standards: tutorial/tutorialStandard.md
+      - Standards: tutorial/tutorial_standards_version.md
       - Roadmap: tutorial/roadmap.md
       - Vesões: tutorial/tutorialVersion.md
       - Empacotamento: tutorial/tutorialEmpacotamento.md

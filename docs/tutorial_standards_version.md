@@ -40,79 +40,94 @@ Standards-Version: 4.6.2
 ```
 
 - Esta é a versão atual declarada.
-- Compare com a versão **mais recente** da Debian Policy: https://www.debian.org/doc/debian-policy/
+
+## 📘 Passo 3: Consulte o checklist de mudanças 
+
+- Compare o que mudou entre a sua versão e a versão **mais recente** da Debian Policy: https://www.debian.org/doc/debian-policy/
 
 
-## 🖊️ Passo 3: Atualize a versão
+## 🖊️ Passo 4: Atualize a versão
 
+
+### Exemplo: Mudanças da Policy entre 4.6.2 → 4.7.2
+
+#### ✅ 4.7.0 (abril/2024)
+- **Scripts de mantenedor (`postinst`, `prerm`)**:
+  - Não devem usar `dpkg-divert` para arquivos de configuração do systemd.
+  - Não devem usar `update-alternatives` para arquivos de configuração do systemd.
+- Pacotes `contrib` ou `non-free` com `Autobuild: yes`:
+  - Não podem acessar a rede durante `debian/rules`.
+- Pacotes que **iniciam serviços**:
+  - Devem fornecer arquivos `*.service` para systemd.
+
+#### ✅ 4.7.1 (fev/2025)
+- **Não instale** arquivos em `/bin`, `/lib`, `/sbin` → use `/usr/bin`, `/usr/lib`, `/usr/sbin`.
+- **Dois pacotes diferentes não podem instalar** binários com **nomes iguais** mesmo em diretórios diferentes do `PATH`.
+- Seu pacote não pode depender de:
+  - `/usr/share/locale` (para funcionar em `C`/`C.UTF-8`)
+  - `/usr/share/man`
+  - `/usr/share/info`
+
+#### ✅ 4.7.2 (fev/2025)
+- Apenas relaxamento sobre uso de `/usr/games`. Nenhuma exigência nova.
+
+### Teste se o pacote precisa de mudanças
+
+O que revisar:
+- [`postinst`, `prerm`, `postrm`] → usam `dpkg-divert` ou `update-alternatives` para systemd?
+- Instala algo fora de `/usr/...`? Verifique `debian/install`, `Makefile`, `d/rules`.
+- Verifique arquivos obrigatórios no sistema para man/info/locale.
+- O binário principal só funciona com manpage/locale? ⚠️ Corrigir.
+- Usa `init.d` mas não tem `.service`? ⚠️ Adicionar.
 Se não houver impacto relevante, edite a linha:
 
-```plain
-Standards-Version: 4.7.0
-```
 
-Substitua pela **última versão disponível**.
-
-💡 **Dica:** Sempre leia o **upgrading-checklist** antes de atualizar!
-
-
-## ✅ Passo 4: Verifique o pacote
-
-Rode as ferramentas para verificar se o pacote está de acordo:
+## ✅ Passo 5: Ferramentas úteis
 
 ```bash
 lintian
+debuild -us -uc
+sbuild
 ```
 
-- Corrija qualquer erro ou advertência crítica.
-- Se aparecer algo relacionado à nova política, ajuste.
+Essas ferramentas ajudam a detectar erros comuns automaticamente. Corrija qualquer erro ou advertência crítica. Se aparecer algo relacionado à nova política, ajuste.
 
 
 ## 🛠️ Passo 5: Atualize o changelog
 
-Edite o arquivo **`debian/changelog`** com o `dch` (Debian ChangeLog Helper):
+### a. Edite `debian/control`
 
-```bash
-dch -i
+```diff
+- Standards-Version: 4.6.2
++ Standards-Version: 4.7.2
 ```
 
-Adicione uma mensagem como:
+### b. Atualize o `debian/changelog` com `dch -i`
 
-```plain
-* Declare compliance with Debian Policy 4.7.0.
+Se não precisou alterar nada:
+
+```txt
+  * Bump Standards-Version to 4.7.2. No changes needed.
 ```
 
-Exemplo de entrada:
+Se precisou: documentar as mudanças. Exemplo:
 
-```plain
-python-immutabledict (2.2.4-2) UNRELEASED; urgency=medium
-
-  * Declare compliance with Debian Policy 4.7.0.
-
- -- Seu Nome <seuemail@debian.org>  Sat, 01 Jun 2025 10:00:00 -0300
+```txt
+  * Bump Standards-Version to 4.7.2.
+    - Migrated systemd config handling (no dpkg-divert)
+    - Avoided installing files outside /usr/*
 ```
 
 ⚠️ Lembre-se de mudar o número da versão Debian, normalmente incrementando o número de revisão.
 
-## ✅ Exemplo prático
+## ✅ Passo 6: Rebuild e verifique
 
-**Antes**:
-
-```plain
-Standards-Version: 4.6.2
+```bash
+debuild -us -uc
+lintian ../nomedopacote_*.changes
 ```
 
-**Depois**:
-
-```plain
-Standards-Version: 4.7.0
-```
-
-**Changelog**:
-
-```plain
-* Declare compliance with Debian Policy 4.7.0.
-```
+Se estiver tudo certo, o pacote já está pronto para subir com a nova Policy.
 
 ## 🧑‍💻 Dicas Finais
 
@@ -121,3 +136,7 @@ Standards-Version: 4.7.0
 - Use o `lintian` para manter a qualidade do pacote.
 - Participe das discussões no Salsa se tiver dúvidas!
 
+## 📝 Nota final
+
+Este tutorial foi feito por iniciantes com base na [Debian Policy Upgrading Checklist](https://www.debian.org/doc/debian-policy/upgrading-checklist.html) e cobre especificamente o exemplo entre a transição da versão **4.6.2 para 4.7.2**.  
+Se tiver dúvidas, consulte a documentação oficial ou peça ajuda nos canais oficiais.

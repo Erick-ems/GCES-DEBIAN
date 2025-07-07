@@ -24,7 +24,7 @@ sudo sh /usr/share/doc/sbuild/examples/sbuild-debian-developer-setup-update-all
 3. Copie o link de **clone via SSH**.
 
 
-![ForkClone](../assets/images/forkClone.png)
+![ForkClone](../img/forkClone.png)
 
 No terminal:
 
@@ -41,7 +41,7 @@ git remote -v
 ```
 
 As saídas esperadas devem ser parecidas com essa imagem:
-![Remote](../assets/images/remote.png)
+![Remote](../img/remote.png)
 
 ## Passo 3: Buildar
 
@@ -57,7 +57,7 @@ gbp buildpackage --git-debian-branch=[nome-da-branch]
 
 Essa parte é a mais demorada do processo. Depois de alguns minutos, caso esteja tudo correto, o build será feito corretamente e terá no final uma saída assim:
 
-![Build](../assets/images/build.png)
+![Build](../img/build.png)
 
 Uma saída parecida com a da cima indica que está tudo certo.
 
@@ -70,13 +70,13 @@ gbp import-orig --uscan --pristine-tar
 
 A saída esperada é a seguinte:
 
-![Pristine1](../assets/images/pristine1.png)
+![Pristine1](../img/pristine1.png)
 
 > Quando aparecer a pergunta `What is the upstream version?`, digite o número da nova versão sugerida (ex: `1.2.3`), se estiver correto com o tracker.
 
 A saída será algo do tipo: 
 
-![Pristine2](../assets/images/pristine2.png)
+![Pristine2](../img/pristine2.png)
 
 
 ## Passo 5: Operações git
@@ -88,7 +88,7 @@ gbp dch --commit --team
 Esse comando irá fazer o commit e inserir no documento debian/changelog que o empacotamento está sendo feito de forma Team Upload. Isso é necessário para o seu empacotamento, caso não esteja nesse documento, o seu build final poderá falhar.
 
 Saída esperada:
-![dhc](../assets/images/dhc.png)
+![dhc](../img/dhc.png)
 
 
 Depois, visualize os commits:
@@ -157,15 +157,15 @@ git push --tags
 
 Feito isso, entre no seu repositório fork, o salsa já irá reconhecer que houve mudanças e irá sugerir que seja feito um merge request, basta clicar em "Criar solicitação de merge". Então você irá no repositório oficial e seguir os passos que o próprio salsa pede para realizar o Merge.
 
-![merge](../assets/images/merge.png)
+![merge](../img/merge.png)
 
 É importante editar em inglês! O título deve ser representativo com as mudanças feita! Exemplo:
 
-![editarMerge](../assets/images/editarMerge.png)
+![editarMerge](../img/editarMerge.png)
 Lembrete: geralmente o merge request ocorre direto para a master, porém, no debian também pode ocorrer da branch master ser nomeada como debian/sid, que é equivalente à master, então não se assuste você está no caminho certo!
 
 Após isso inclua os links importantes, e as etiquetas adequadas. Exemplo:
-![issue](../assets/images/issue.png)
+![issue](../img/issue.png)
 
 ## Passo 10: Revisão
 Agora o seu pacote será revisado por algum DM do Debian. É só aguardar e ficar de olho nos comentários, pois o seu revisor poderá sugerir alterações.
