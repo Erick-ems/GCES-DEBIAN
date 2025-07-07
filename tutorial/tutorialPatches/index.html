@@ -16,9 +16,11 @@
         <link rel="prev" href="../tutorialEmpacotamento/">
       
       
+        <link rel="next" href="../tutorialUpstream/">
+      
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.15">
     
     
       
@@ -966,6 +968,98 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorialUpstream/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Upstream
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-salsa-gitlab-ssh/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Salsa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tutorial-configurando-ambiente/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Ambiente
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introducao_tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tracker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1309,6 +1403,120 @@ git<span class="w"> </span>push
 <li class="task-list-item"><input type="checkbox" disabled checked/> <code>debuild -us -uc</code> roda sem erro</li>
 <li class="task-list-item"><input type="checkbox" disabled checked/> O <code>.orig.tar.gz</code> está na pasta raiz</li>
 </ul>
+<h1 id="tutorial-corrigindo-e-aplicando-patches-em-um-pacote-debian-com-quilt-e-debuild_1">📦 Tutorial: Corrigindo e Aplicando Patches em um Pacote Debian com <code>quilt</code> e <code>debuild</code><a class="headerlink" href="#tutorial-corrigindo-e-aplicando-patches-em-um-pacote-debian-com-quilt-e-debuild_1" title="Permanent link">&para;</a></h1>
+<p>Este guia mostra como aplicar e corrigir patches em um pacote Debian usando <code>quilt</code>, garantir conformidade com o DEP-3, e buildar corretamente com <code>debuild</code>.</p>
+<hr />
+<h2 id="requisitos_1">🔧 Requisitos<a class="headerlink" href="#requisitos_1" title="Permanent link">&para;</a></h2>
+<p>Instale os pacotes necessários:</p>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>devscripts<span class="w"> </span>build-essential<span class="w"> </span>quilt<span class="w"> </span>debhelper
+</code></pre></div>
+<hr />
+<h2 id="clone-o-repositorio-do-pacote_1">🧬 Clone o repositório do pacote<a class="headerlink" href="#clone-o-repositorio-do-pacote_1" title="Permanent link">&para;</a></h2>
+<p>Clone o seu <em>fork</em> do repositório no Salsa:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>git@salsa.debian.org:SEU_USUARIO/wxedid.git
+<span class="nb">cd</span><span class="w"> </span>wxedid
+</code></pre></div>
+<hr />
+<h2 id="configurar-o-ambiente-quilt_1">⚙️ Configurar o ambiente <code>quilt</code><a class="headerlink" href="#configurar-o-ambiente-quilt_1" title="Permanent link">&para;</a></h2>
+<p>Configure as variáveis de ambiente para o <code>quilt</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_PATCHES</span><span class="o">=</span>debian/patches
+<span class="nb">export</span><span class="w"> </span><span class="nv">QUILT_REFRESH_ARGS</span><span class="o">=</span><span class="s2">&quot;--no-timestamps --no-index -p ab&quot;</span>
+</code></pre></div>
+<p>Essas variáveis:
+- Dizem ao <code>quilt</code> onde estão os patches.
+- Evitam timestamps e índices nos diffs.</p>
+<hr />
+<h2 id="aplicar-e-editar-patches_1">🩹 Aplicar e editar patches<a class="headerlink" href="#aplicar-e-editar-patches_1" title="Permanent link">&para;</a></h2>
+<h3 id="aplicar-todos-os-patches_1">Aplicar todos os patches<a class="headerlink" href="#aplicar-todos-os-patches_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="editar-um-patch-existente_1">Editar um patch existente<a class="headerlink" href="#editar-um-patch-existente_1" title="Permanent link">&para;</a></h3>
+<p>Abra o patch com seu editor:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>debian/patches/spelling.patch
+</code></pre></div>
+<blockquote>
+<p>Ou edite os arquivos do código fonte e depois atualize com <code>quilt refresh</code>.</p>
+</blockquote>
+<hr />
+<h2 id="atualizar-um-patch-com-quilt-refresh_1">✏️ Atualizar um patch com <code>quilt refresh</code><a class="headerlink" href="#atualizar-um-patch-com-quilt-refresh_1" title="Permanent link">&para;</a></h2>
+<p>Se você editou o código-fonte diretamente (e não o patch):</p>
+<ol>
+<li>
+<p>Certifique-se de que o patch está aplicado:
+   <div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>spelling.patch
+</code></pre></div></p>
+</li>
+<li>
+<p>Atualize:
+   <div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>refresh
+</code></pre></div></p>
+</li>
+</ol>
+<hr />
+<h2 id="adicionar-cabecalho-dep-3_1">🧾 Adicionar cabeçalho DEP-3<a class="headerlink" href="#adicionar-cabecalho-dep-3_1" title="Permanent link">&para;</a></h2>
+<p>Todo patch deve ter um cabeçalho <a href="https://dep-team.pages.debian.net/deps/dep3/">DEP-3</a>.</p>
+<h3 id="exemplo-de-cabecalho-valido_1">Exemplo de cabeçalho válido:<a class="headerlink" href="#exemplo-de-cabecalho-valido_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Description: Corrige erros de ortografia em mensagens e comentários
+Author: Maria &lt;maria@exemplo.com&gt;
+Bug-Debian: https://bugs.debian.org/123456
+Forwarded: no
+Last-Update: 2025-06-01
+</code></pre></div>
+<p>Abra o patch para editar:</p>
+<div class="highlight"><pre><span></span><code>nano<span class="w"> </span>debian/patches/spelling.patch
+</code></pre></div>
+<p>E adicione o cabeçalho acima no topo.</p>
+<hr />
+<h2 id="verifique-a-ordem-dos-patches_1">📜 Verifique a ordem dos patches<a class="headerlink" href="#verifique-a-ordem-dos-patches_1" title="Permanent link">&para;</a></h2>
+<p>Abra o arquivo <code>debian/patches/series</code> e veja se o seu patch está listado:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>debian/patches/series
+</code></pre></div>
+<p>Se necessário, adicione o nome do patch no final do arquivo (sem caminho, só o nome do <code>.patch</code>).</p>
+<hr />
+<h2 id="limpando-e-buildando_1">🧹 Limpando e buildando<a class="headerlink" href="#limpando-e-buildando_1" title="Permanent link">&para;</a></h2>
+<h3 id="desaplique-todos-os-patches_1">Desaplique todos os patches:<a class="headerlink" href="#desaplique-todos-os-patches_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>pop<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="limpe-a-build-anterior_1">Limpe a build anterior:<a class="headerlink" href="#limpe-a-build-anterior_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>clean
+</code></pre></div>
+<h3 id="aplique-os-patches-novamente_1">Aplique os patches novamente:<a class="headerlink" href="#aplique-os-patches-novamente_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>quilt<span class="w"> </span>push<span class="w"> </span>-a
+</code></pre></div>
+<h3 id="faca-o-build-do-pacote_1">Faça o build do pacote:<a class="headerlink" href="#faca-o-build-do-pacote_1" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+</code></pre></div>
+<hr />
+<h2 id="corrigindo-erro-de-tarball-orig_1">🧰 Corrigindo erro de tarball <code>.orig</code><a class="headerlink" href="#corrigindo-erro-de-tarball-orig_1" title="Permanent link">&para;</a></h2>
+<p>Se o build falhar com erro de <code>.orig.tar.gz</code> ausente:</p>
+<ol>
+<li>Baixe o tarball original da upstream (ex: do GitHub, site do autor etc).</li>
+<li>Renomeie com o nome correto:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>mv<span class="w"> </span>~/Downloads/wxedid-0.0.32.tar.gz<span class="w"> </span>../wxedid_0.0.32.orig.tar.gz
+</code></pre></div>
+<ol>
+<li>Tente buildar novamente:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+</code></pre></div>
+<hr />
+<h2 id="enviando-alteracoes-para-seu-fork_1">📤 Enviando alterações para seu fork<a class="headerlink" href="#enviando-alteracoes-para-seu-fork_1" title="Permanent link">&para;</a></h2>
+<p>Adicione e <em>commite</em> os patches e o arquivo <code>series</code>:</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>add<span class="w"> </span>debian/patches/*
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix spelling errors and add DEP-3 metadata to patch&quot;</span>
+git<span class="w"> </span>push
+</code></pre></div>
+<hr />
+<h2 id="checklist-final_1">✅ Checklist Final<a class="headerlink" href="#checklist-final_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><input type="checkbox" disabled checked/> Todos os patches estão em <code>debian/patches/</code></li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> Cada patch possui cabeçalho DEP-3</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> O arquivo <code>series</code> lista os patches</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> <code>debuild -us -uc</code> roda sem erro</li>
+<li class="task-list-item"><input type="checkbox" disabled checked/> O <code>.orig.tar.gz</code> está na pasta raizam</li>
+</ul>
 
 
 
@@ -1360,7 +1568,7 @@ git<span class="w"> </span>push
       <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado para \u00e1rea de transfer\u00eancia", "clipboard.copy": "Copiar para \u00e1rea de transfer\u00eancia", "search.result.more.one": "mais 1 nesta p\u00e1gina", "search.result.more.other": "# mais nesta p\u00e1gina", "search.result.none": "Nenhum documento encontrado", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Digite para iniciar a busca", "search.result.term.missing": "Ausente", "select.version": "Selecione a vers\u00e3o"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56ea9cef.min.js"></script>
       
     
   </body>
