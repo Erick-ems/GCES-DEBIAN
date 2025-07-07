@@ -632,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorial/tutorialStandard/" class="md-nav__link">
+      <a href="../tutorial/tutorial_standards_version.md" class="md-nav__link">
         
   
   
@@ -893,18 +893,84 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#passo-3-atualize-a-versao" class="md-nav__link">
+  <a href="#passo-3-consulte-o-checklist-de-mudancas" class="md-nav__link">
     <span class="md-ellipsis">
-      🖊️ Passo 3: Atualize a versão
+      📘 Passo 3: Consulte o checklist de mudanças
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#passo-4-verifique-o-pacote" class="md-nav__link">
+  <a href="#passo-4-atualize-a-versao" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Passo 4: Verifique o pacote
+      🖊️ Passo 4: Atualize a versão
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🖊️ Passo 4: Atualize a versão">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-mudancas-da-policy-entre-462-472" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo: Mudanças da Policy entre 4.6.2 → 4.7.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemplo: Mudanças da Policy entre 4.6.2 → 4.7.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#470-abril2024" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 4.7.0 (abril/2024)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#471-fev2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 4.7.1 (fev/2025)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#472-fev2025" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ 4.7.2 (fev/2025)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#teste-se-o-pacote-precisa-de-mudancas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Teste se o pacote precisa de mudanças
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#passo-5-ferramentas-uteis" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Passo 5: Ferramentas úteis
     </span>
   </a>
   
@@ -917,12 +983,36 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="🛠️ Passo 5: Atualize o changelog">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-edite-debiancontrol" class="md-nav__link">
+    <span class="md-ellipsis">
+      a. Edite debian/control
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-atualize-o-debianchangelog-com-dch-i" class="md-nav__link">
+    <span class="md-ellipsis">
+      b. Atualize o debian/changelog com dch -i
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#exemplo-pratico" class="md-nav__link">
+  <a href="#passo-6-rebuild-e-verifique" class="md-nav__link">
     <span class="md-ellipsis">
-      ✅ Exemplo prático
+      ✅ Passo 6: Rebuild e verifique
     </span>
   </a>
   
@@ -932,6 +1022,15 @@
   <a href="#dicas-finais" class="md-nav__link">
     <span class="md-ellipsis">
       🧑‍💻 Dicas Finais
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nota-final" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Nota final
     </span>
   </a>
   
@@ -978,47 +1077,70 @@
 </code></pre></div>
 <ul>
 <li>Esta é a versão atual declarada.</li>
-<li>Compare com a versão <strong>mais recente</strong> da Debian Policy: https://www.debian.org/doc/debian-policy/</li>
 </ul>
-<h2 id="passo-3-atualize-a-versao">🖊️ Passo 3: Atualize a versão<a class="headerlink" href="#passo-3-atualize-a-versao" title="Permanent link">&para;</a></h2>
-<p>Se não houver impacto relevante, edite a linha:</p>
-<div class="highlight"><pre><span></span><code>Standards-Version: 4.7.0
-</code></pre></div>
-<p>Substitua pela <strong>última versão disponível</strong>.</p>
-<p>💡 <strong>Dica:</strong> Sempre leia o <strong>upgrading-checklist</strong> antes de atualizar!</p>
-<h2 id="passo-4-verifique-o-pacote">✅ Passo 4: Verifique o pacote<a class="headerlink" href="#passo-4-verifique-o-pacote" title="Permanent link">&para;</a></h2>
-<p>Rode as ferramentas para verificar se o pacote está de acordo:</p>
-<div class="highlight"><pre><span></span><code>lintian
-</code></pre></div>
+<h2 id="passo-3-consulte-o-checklist-de-mudancas">📘 Passo 3: Consulte o checklist de mudanças<a class="headerlink" href="#passo-3-consulte-o-checklist-de-mudancas" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Corrija qualquer erro ou advertência crítica.</li>
-<li>Se aparecer algo relacionado à nova política, ajuste.</li>
+<li>Compare o que mudou entre a sua versão e a versão <strong>mais recente</strong> da Debian Policy: https://www.debian.org/doc/debian-policy/</li>
 </ul>
+<h2 id="passo-4-atualize-a-versao">🖊️ Passo 4: Atualize a versão<a class="headerlink" href="#passo-4-atualize-a-versao" title="Permanent link">&para;</a></h2>
+<h3 id="exemplo-mudancas-da-policy-entre-462-472">Exemplo: Mudanças da Policy entre 4.6.2 → 4.7.2<a class="headerlink" href="#exemplo-mudancas-da-policy-entre-462-472" title="Permanent link">&para;</a></h3>
+<h4 id="470-abril2024">✅ 4.7.0 (abril/2024)<a class="headerlink" href="#470-abril2024" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Scripts de mantenedor (<code>postinst</code>, <code>prerm</code>)</strong>:</li>
+<li>Não devem usar <code>dpkg-divert</code> para arquivos de configuração do systemd.</li>
+<li>Não devem usar <code>update-alternatives</code> para arquivos de configuração do systemd.</li>
+<li>Pacotes <code>contrib</code> ou <code>non-free</code> com <code>Autobuild: yes</code>:</li>
+<li>Não podem acessar a rede durante <code>debian/rules</code>.</li>
+<li>Pacotes que <strong>iniciam serviços</strong>:</li>
+<li>Devem fornecer arquivos <code>*.service</code> para systemd.</li>
+</ul>
+<h4 id="471-fev2025">✅ 4.7.1 (fev/2025)<a class="headerlink" href="#471-fev2025" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Não instale</strong> arquivos em <code>/bin</code>, <code>/lib</code>, <code>/sbin</code> → use <code>/usr/bin</code>, <code>/usr/lib</code>, <code>/usr/sbin</code>.</li>
+<li><strong>Dois pacotes diferentes não podem instalar</strong> binários com <strong>nomes iguais</strong> mesmo em diretórios diferentes do <code>PATH</code>.</li>
+<li>Seu pacote não pode depender de:</li>
+<li><code>/usr/share/locale</code> (para funcionar em <code>C</code>/<code>C.UTF-8</code>)</li>
+<li><code>/usr/share/man</code></li>
+<li><code>/usr/share/info</code></li>
+</ul>
+<h4 id="472-fev2025">✅ 4.7.2 (fev/2025)<a class="headerlink" href="#472-fev2025" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Apenas relaxamento sobre uso de <code>/usr/games</code>. Nenhuma exigência nova.</li>
+</ul>
+<h3 id="teste-se-o-pacote-precisa-de-mudancas">Teste se o pacote precisa de mudanças<a class="headerlink" href="#teste-se-o-pacote-precisa-de-mudancas" title="Permanent link">&para;</a></h3>
+<p>O que revisar:
+- [<code>postinst</code>, <code>prerm</code>, <code>postrm</code>] → usam <code>dpkg-divert</code> ou <code>update-alternatives</code> para systemd?
+- Instala algo fora de <code>/usr/...</code>? Verifique <code>debian/install</code>, <code>Makefile</code>, <code>d/rules</code>.
+- Verifique arquivos obrigatórios no sistema para man/info/locale.
+- O binário principal só funciona com manpage/locale? ⚠️ Corrigir.
+- Usa <code>init.d</code> mas não tem <code>.service</code>? ⚠️ Adicionar.
+Se não houver impacto relevante, edite a linha:</p>
+<h2 id="passo-5-ferramentas-uteis">✅ Passo 5: Ferramentas úteis<a class="headerlink" href="#passo-5-ferramentas-uteis" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>lintian
+debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+sbuild
+</code></pre></div>
+<p>Essas ferramentas ajudam a detectar erros comuns automaticamente. Corrija qualquer erro ou advertência crítica. Se aparecer algo relacionado à nova política, ajuste.</p>
 <h2 id="passo-5-atualize-o-changelog">🛠️ Passo 5: Atualize o changelog<a class="headerlink" href="#passo-5-atualize-o-changelog" title="Permanent link">&para;</a></h2>
-<p>Edite o arquivo <strong><code>debian/changelog</code></strong> com o <code>dch</code> (Debian ChangeLog Helper):</p>
-<div class="highlight"><pre><span></span><code>dch<span class="w"> </span>-i
+<h3 id="a-edite-debiancontrol">a. Edite <code>debian/control</code><a class="headerlink" href="#a-edite-debiancontrol" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="gd">- Standards-Version: 4.6.2</span>
+<span class="gi">+ Standards-Version: 4.7.2</span>
 </code></pre></div>
-<p>Adicione uma mensagem como:</p>
-<div class="highlight"><pre><span></span><code>* Declare compliance with Debian Policy 4.7.0.
+<h3 id="b-atualize-o-debianchangelog-com-dch-i">b. Atualize o <code>debian/changelog</code> com <code>dch -i</code><a class="headerlink" href="#b-atualize-o-debianchangelog-com-dch-i" title="Permanent link">&para;</a></h3>
+<p>Se não precisou alterar nada:</p>
+<div class="highlight"><pre><span></span><code>  * Bump Standards-Version to 4.7.2. No changes needed.
 </code></pre></div>
-<p>Exemplo de entrada:</p>
-<div class="highlight"><pre><span></span><code>python-immutabledict (2.2.4-2) UNRELEASED; urgency=medium
-
-  * Declare compliance with Debian Policy 4.7.0.
-
- -- Seu Nome &lt;seuemail@debian.org&gt;  Sat, 01 Jun 2025 10:00:00 -0300
+<p>Se precisou: documentar as mudanças. Exemplo:</p>
+<div class="highlight"><pre><span></span><code>  * Bump Standards-Version to 4.7.2.
+    - Migrated systemd config handling (no dpkg-divert)
+    - Avoided installing files outside /usr/*
 </code></pre></div>
 <p>⚠️ Lembre-se de mudar o número da versão Debian, normalmente incrementando o número de revisão.</p>
-<h2 id="exemplo-pratico">✅ Exemplo prático<a class="headerlink" href="#exemplo-pratico" title="Permanent link">&para;</a></h2>
-<p><strong>Antes</strong>:</p>
-<div class="highlight"><pre><span></span><code>Standards-Version: 4.6.2
+<h2 id="passo-6-rebuild-e-verifique">✅ Passo 6: Rebuild e verifique<a class="headerlink" href="#passo-6-rebuild-e-verifique" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>debuild<span class="w"> </span>-us<span class="w"> </span>-uc
+lintian<span class="w"> </span>../nomedopacote_*.changes
 </code></pre></div>
-<p><strong>Depois</strong>:</p>
-<div class="highlight"><pre><span></span><code>Standards-Version: 4.7.0
-</code></pre></div>
-<p><strong>Changelog</strong>:</p>
-<div class="highlight"><pre><span></span><code>* Declare compliance with Debian Policy 4.7.0.
-</code></pre></div>
+<p>Se estiver tudo certo, o pacote já está pronto para subir com a nova Policy.</p>
 <h2 id="dicas-finais">🧑‍💻 Dicas Finais<a class="headerlink" href="#dicas-finais" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Sempre leia a Debian Policy com atenção.</li>
@@ -1026,6 +1148,9 @@
 <li>Use o <code>lintian</code> para manter a qualidade do pacote.</li>
 <li>Participe das discussões no Salsa se tiver dúvidas!</li>
 </ul>
+<h2 id="nota-final">📝 Nota final<a class="headerlink" href="#nota-final" title="Permanent link">&para;</a></h2>
+<p>Este tutorial foi feito por iniciantes com base na <a href="https://www.debian.org/doc/debian-policy/upgrading-checklist.html">Debian Policy Upgrading Checklist</a> e cobre especificamente o exemplo entre a transição da versão <strong>4.6.2 para 4.7.2</strong>.<br />
+Se tiver dúvidas, consulte a documentação oficial ou peça ajuda nos canais oficiais.</p>
 
 
 

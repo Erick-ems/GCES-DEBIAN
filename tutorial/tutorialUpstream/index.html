@@ -638,7 +638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tutorialStandard/" class="md-nav__link">
+      <a href="../tutorial_standards_version.md" class="md-nav__link">
         
   
   
@@ -1088,7 +1088,7 @@
 <li>Clique em <strong>Fork</strong> (canto superior direito).</li>
 <li>Copie o link de <strong>clone via SSH</strong>.</li>
 </ol>
-<p><img alt="ForkClone" src="../assets/images/forkClone.png" /></p>
+<p><img alt="ForkClone" src="../../img/forkClone.png" /></p>
 <p>No terminal:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Clona o repositório</span>
 gbp<span class="w"> </span>clone<span class="w"> </span><span class="o">[</span>link-copiado<span class="o">]</span>
@@ -1101,7 +1101,7 @@ git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </s
 git<span class="w"> </span>remote<span class="w"> </span>-v
 </code></pre></div>
 <p>As saídas esperadas devem ser parecidas com essa imagem:
-<img alt="Remote" src="../assets/images/remote.png" /></p>
+<img alt="Remote" src="../../img/remote.png" /></p>
 <h2 id="passo-3-buildar">Passo 3: Buildar<a class="headerlink" href="#passo-3-buildar" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gbp<span class="w"> </span>buildpackage
 </code></pre></div>
@@ -1109,25 +1109,25 @@ git<span class="w"> </span>remote<span class="w"> </span>-v
 <div class="highlight"><pre><span></span><code>gbp<span class="w"> </span>buildpackage<span class="w"> </span>--git-debian-branch<span class="o">=[</span>nome-da-branch<span class="o">]</span>
 </code></pre></div>
 <p>Essa parte é a mais demorada do processo. Depois de alguns minutos, caso esteja tudo correto, o build será feito corretamente e terá no final uma saída assim:</p>
-<p><img alt="Build" src="../assets/images/build.png" /></p>
+<p><img alt="Build" src="../../img/build.png" /></p>
 <p>Uma saída parecida com a da cima indica que está tudo certo.</p>
 <h2 id="passo-4-atualizar-para-nova-versao-upstream">Passo 4: Atualizar para nova versão upstream<a class="headerlink" href="#passo-4-atualizar-para-nova-versao-upstream" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><span class="c1"># Atualizar o pacote</span>
 gbp<span class="w"> </span>import-orig<span class="w"> </span>--uscan<span class="w"> </span>--pristine-tar
 </code></pre></div>
 <p>A saída esperada é a seguinte:</p>
-<p><img alt="Pristine1" src="../assets/images/pristine1.png" /></p>
+<p><img alt="Pristine1" src="../../img/pristine1.png" /></p>
 <blockquote>
 <p>Quando aparecer a pergunta <code>What is the upstream version?</code>, digite o número da nova versão sugerida (ex: <code>1.2.3</code>), se estiver correto com o tracker.</p>
 </blockquote>
 <p>A saída será algo do tipo: </p>
-<p><img alt="Pristine2" src="../assets/images/pristine2.png" /></p>
+<p><img alt="Pristine2" src="../../img/pristine2.png" /></p>
 <h2 id="passo-5-operacoes-git">Passo 5: Operações git<a class="headerlink" href="#passo-5-operacoes-git" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>gbp<span class="w"> </span>dch<span class="w"> </span>--commit<span class="w"> </span>--team
 </code></pre></div>
 <p>Esse comando irá fazer o commit e inserir no documento debian/changelog que o empacotamento está sendo feito de forma Team Upload. Isso é necessário para o seu empacotamento, caso não esteja nesse documento, o seu build final poderá falhar.</p>
 <p>Saída esperada:
-<img alt="dhc" src="../assets/images/dhc.png" /></p>
+<img alt="dhc" src="../../img/dhc.png" /></p>
 <p>Depois, visualize os commits:</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>log
 </code></pre></div>
@@ -1168,12 +1168,12 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend
 git<span class="w"> </span>push<span class="w"> </span>--tags
 </code></pre></div>
 <p>Feito isso, entre no seu repositório fork, o salsa já irá reconhecer que houve mudanças e irá sugerir que seja feito um merge request, basta clicar em "Criar solicitação de merge". Então você irá no repositório oficial e seguir os passos que o próprio salsa pede para realizar o Merge.</p>
-<p><img alt="merge" src="../assets/images/merge.png" /></p>
+<p><img alt="merge" src="../../img/merge.png" /></p>
 <p>É importante editar em inglês! O título deve ser representativo com as mudanças feita! Exemplo:</p>
-<p><img alt="editarMerge" src="../assets/images/editarMerge.png" />
+<p><img alt="editarMerge" src="../../img/editarMerge.png" />
 Lembrete: geralmente o merge request ocorre direto para a master, porém, no debian também pode ocorrer da branch master ser nomeada como debian/sid, que é equivalente à master, então não se assuste você está no caminho certo!</p>
 <p>Após isso inclua os links importantes, e as etiquetas adequadas. Exemplo:
-<img alt="issue" src="../assets/images/issue.png" /></p>
+<img alt="issue" src="../../img/issue.png" /></p>
 <h2 id="passo-10-revisao">Passo 10: Revisão<a class="headerlink" href="#passo-10-revisao" title="Permanent link">&para;</a></h2>
 <p>Agora o seu pacote será revisado por algum DM do Debian. É só aguardar e ficar de olho nos comentários, pois o seu revisor poderá sugerir alterações.</p>
 <blockquote>
